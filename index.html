@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      ///=======contoh opertor perbandingan=========/////
+      let result = 5 == "5"; //true
+
+      let result2 = 5 === "5"; //false
+      document.writeln(result, " ", result2);
+
+      ///=======contoh opertor logika=========/////
+      const nilaiUian = 90;
+      const nilaiAbsensi = 70;
+
+      const lulusUjian = nilaiUian > 75;
+      document.writeln(lulusUjian); // true
+      const lulusAbsensi = nilaiAbsensi > 75;
+      document.writeln(lulusAbsensi); //false
+
+      const lulus = lulusUjian && lulusAbsensi;
+      document.writeln(lulus); // maka result false karena pake operator &&
+
+      ///=======contoh console=========/////
+      console.info("hello world");
+      console.log();
+      console.error("ini error");
+      console.warn("ini warning");
+      console.debug("Debug");
+
+      ///=======String template =========/////
+      const namaDepan = "Pajar"; // menggunakan backtik untuk menambah string tanpa +
+      const namaTengah = "D";
+      const namaBelakang = "Arifin";
+      const template = `Name : ${namaDepan} ${namaTengah} ${namaBelakang}`; // memudahkan ketika variable banyak
+
+      console.log(template);
+      const nilai = 90;
+      const template2 = `Name : ${template}, lulus: ${nilai > 80}`; // bisa melakukan substitusi di dalam template string
+      console.log(template2);
+
+      const multiline = `Nama Saya Pajar arifin,
+        ya begini lah hidup,
+        koyo asu cah`; // backtik juga bisa di gunakan untuk multiline.
+
+      console.log(multiline);
+
+      ///=======Conversi string ke number dan sebalik nya =========/////
+      const value1 = parseFloat("1.9");
+      const value2 = 1;
+      const sum = value1 + value2;
+
+      document.writeln(`<p>${sum}</p>`); // menambahkan elemet <P> (paragrahp) pada html dengan value 'sum' yang ada di js
+
+      document.writeln(`<p>${parseInt(1.9)}</p>`); // menambahkan elemet <P> (paragrahp) pada html dengan value di convert ke int (pareseInt)
+      document.writeln(`<p>${parseFloat(1.1)}</p>`); // menambahkan elemet <P> (paragrahp) pada html dengan value di convert ke float (pareseFloat)
+      document.writeln(`<p>${Number(1.5)}</p>`); // menambahkan elemet <P> (paragrahp) pada html dengan value di convert ke Number (bilangan angka dengan format sesuai value)
+
+      const a = 1;
+      const b = 2;
+      const tot = a.toString() + b.toString(); // conversi ke dalam string
+      document.writeln(`<p>${tot}</p>`);
+
+      document.writeln(`<p>${parseInt("salah")}</p>`); //result = Nan (not a Number)
+      document.writeln(`<p>${parseFloat("1.1bukansalah")}</p>`); // reuslt 1.1 karena pada parseInt dan parseFloat masih ada toleransi
+      document.writeln(`<p>${Number("1.1")}</p>`); // reuslt 1.1
+      document.writeln(`<p>${Number("1.1gaes")}</p>`); // resut akan Nan,  berbeda dengan parseInt dan float, number tidak ada toleransi
+
+      const first = Number("test"); // Nan
+      const total_first = first + 100;
+      document.writeln(`<p>${total_first}</p>`); //result NaN ketika sudah jadi NaN tidak bisa di manipulasi
+      document.writeln(`<p>${isNaN(first)}</p>`); // result true, function isNan untuk mengechek Nan atau bukan
+      document.writeln(`<p>${isNaN(100)}</p>`); // result false
+
+      //---------------ARRAY & MANIPULATION------------///
+      const names = [];
+      names.push("Pajar");
+      names.push("Arifin", "Douglass");
+      names.push("Budi", "Eko"); // push merupakan function untuk menambah array
+
+      document.writeln(`<p>${names}</p>`);
+      console.table(names); // result meruapakan table index dan value yg ada di dalam array
+
+      console.info(names[0]); //
+      console.info(names[1]); //
+      console.info(names[2]); //
+      console.info(names[3]); // untuk chek value dalam index '3'
+
+      names[3] = "programer"; // untuk mengubah value di index '3'
+      console.table(names);
+
+      delete names[3]; // untuk menghapus value di index '3'
+      console.table(names);
+
+      names.push("pajar lagi"); // untuk menambahkan index dan value di dalam array
+      console.table(names);
+
+      names[3] = "di revisi ges"; // setelah di hapus kemudian bisa di tambahkan lagi
+      console.table(names);
+
+      ////=========OBJECT DAN MANIPULATION=============////////
+
+      const person = {};
+
+      //ubah property / atribute
+      person["nama"] = "pajar arifin";
+      person["alamat"] = "Karawang";
+      person["umur"] = 30;
+
+      console.table(person);
+      delete person["umur"]; // menghapus atribute object
+      console.table(person);
+
+      const orang = {
+        "nama lengkap": "pajar arifin",
+        alamat: "Karaeang",
+        umur: 30,
+      }; // jika atribute lebih dari satu suku kata bisa di tambahkan "", contoh pada "nama lengkap"
+
+      console.table(orang);
+      console.info(`nama : ${orang["nama lengkap"]}`); //untuk mengakses property lebih dari satu kata
+      console.info(`alamat : ${orang.alamat}`);
+      console.info(`umur : ${orang.umur}`);
+
+      console.table(orang);
+
+      /// ===============IF EXPRESION======================///
+      const examValue = 70;
+
+      if (examValue >= 80) {
+        document.writeln("<p>Good Job</p>");
+      } /// program di execusi ketika syarat terpenuhi
+      else {
+        document.writeln("<p>Coba Lagi</p>");
+      } // program di eksekusi ketika syarat tidak terpenuhi
+
+      const testValue = 70;
+
+      if (testValue >= 80) {
+        document.writeln("<p>Good Job</p>");
+      } /// program di execusi ketika syarat terpenuhi
+      else if (testValue <= 70) {
+        document.writeln("<p>Not Bad</p>");
+      } // program di eksekusi ketika syarat tidak terpenuhi
+      else {
+        document.writeln("<p>Coba Lagi</p>");
+      } /// "jika percabngan banyak lakukan else if seperti ini"
+
+      ///=============POP UP=================////
+      //1. Alert
+      alert("hello gaes"); // akan keluar pop up 'hello gaes'
+
+      //2. prompt
+
+      const name = prompt("siapa nama anda"); // akan ada pop up input nama
+
+      alert(`Hello : ${name}`); // kemudian nama akan muncul pada pop up alert
+
+      //3. Confirm
+      const masuk = confirm("anda yakin mau pusing?");
+      if (masuk) {
+        const name = prompt("siapa nama anda?");
+        alert(`Hello ${name}`);
+      } else {
+        alert("bye bye");
+      } // akan keluar choice pop up, jika klik oke akan execusi "heloo dan nama yang di input" kalo tidak akan exec "bye bye"
+    </script>
+  </body>
+</html>
