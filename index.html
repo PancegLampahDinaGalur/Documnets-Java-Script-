@@ -188,14 +188,56 @@
       } // akan mengecek nilai, jika nilai 90 maka akan menampilkan B
     
 
+
     //===================OPERATOR TYPE OFF=================//\
     const value = 100;
 
     const typeData = typeof value;
     document.writeln(typeData); // akan menampilkan tipe data dari value
     
+
+
+    //===================IN OPERATOR=================//\
+
+    const persons = {
+      first_name: "pajar",
+      age: 30,
+    };
+
+
+    if ("first_name" in persons) {
+      document.writeln("<p>ada</p>"); // melakkan pengecekan apakah ada atribute name di dalam object person
+    } else {
+      document.writeln("<p>tidak ada</p>");
+    } // akan mengecek apakah ada atribute name di dalam object person
+
+
+    //==================TERNARY OPERATOR=============////
+
+    const p = 70;
+
+    const res = p > 80 ? "lulus" : "tidak lulus";  //di tandai dengan ? dan : jika true maka akan menampilkan lulus jika false maka tidak lulus
+    document.writeln(res); // akan mengecek apakah nilai p lebih dari 80 jika iya maka lulus jika tidak maka tidak lulus
     
+
+    //==================NULISH COALESCING OPERATOR=============////
+
+    let params ; // jika;
+    //let params = "pajar";  // kal paarams di isi maka akan menampilkan params jika tidak maka akan menampilkan default 
+
+    let data1 = params
+    if (params === null || params === undefined) {
+      data1 = "default";
+    } // jika params null atau undefined maka akan di ganti dengan default
+
+    document.writeln(`<p> ${data1} </p>`); // akan menampilkan default    
     
+
+    // contoh nulish coalescing operator
+    data = params ?? "default"; // jika params null atau undefined maka akan di ganti dengan default  
+
+    document.writeln(`<p> ${data} </p>`); // akan menampilkan default
+
     </script>
   </body>
 </html>
